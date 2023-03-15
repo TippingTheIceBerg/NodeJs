@@ -1,11 +1,12 @@
 {
   "devDependencies": {
     "eslint": "^8.35.0",
+    "nodemon": "^2.0.21",
     "prettier": "^2.8.4"
   },
   "name": "nodejs",
   "version": "1.0.0",
-  "main": "altflavor.js",
+  "main": "node.js",
   "dependencies": {
     "acorn": "^8.8.2",
     "acorn-jsx": "^5.3.2",
@@ -99,7 +100,7 @@
     "yocto-queue": "^0.1.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon app.js"
   },
   "author": "",
   "license": "ISC",

@@ -5,5 +5,5 @@
   "editor.formatOnSave": true, // optional
   "editor.formatOnSaveMode": "file", // required to format on save
   "files.autoSave": "onFocusChange",
-  "liveServer.settings.port": 5502 // optional but recommended
+  "liveServer.settings.port": 5504 // optional but recommended
 }

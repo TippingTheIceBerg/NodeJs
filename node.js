@@ -1,5 +1,20 @@
-// convention is to name the variable _ for the packages. This example used flatten deep which is in the package of lodash and in of itself isn't important to know
-const _ = require("lodash");
-const items = [1, [2, [3, [4]]]];
-const newItems = _.flattenDeep(items);
-console.log(newItems);
+const { readFile } = require("fs");
+const getText = (path) => {
+  return new Promise((resolve, reject) => {
+    // this is the way we created those messy async
+    readFile(path, "utf8", (err, data) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(data);
+      }
+    });
+  });
+};
+getText("./content/first.txt")
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
