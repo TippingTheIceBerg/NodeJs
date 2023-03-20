@@ -1,20 +1,17 @@
-const { readFile } = require("fs");
-const getText = (path) => {
-  return new Promise((resolve, reject) => {
-    // this is the way we created those messy async
-    readFile(path, "utf8", (err, data) => {
-      if (err) {
-        reject(err);
-      } else {
-        resolve(data);
-      }
-    });
-  });
-};
-getText("./content/first.txt")
-  .then((result) => {
-    console.log(result);
-  })
-  .catch((err) => {
+const {readFile, writeFile} = require("fs").promises;
+const util = require("util");
+
+let seeWhatHappens = async () =>{
+  try {
+    let first = await readFile("./content/first.txt","utf8");
+    let second = await readFile("./content/second.txt","utf8");
+    await writeFile("Work-please.txt",`this should add text ${first} and ${second}  and make the file`)
+    console.log(first,second
+      );
+
+  }
+  catch(err){
     console.log(err);
-  });
+  }
+}
+seeWhatHappens()
